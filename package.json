@@ -1,0 +1,41 @@
+{
+  "name": "minhle generator",
+  "version": "1.0.0",
+  "description": "MinhLe Generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "MinhLe",
+    "CLI",
+    "Generator",
+    "Vue-Starter"
+  ],
+  "bin": {
+    "minhle": "./index.js"
+  },
+  "author": "Minh Le",
+  "license": "MIT",
+  "dependencies": {
+    "@octokit/rest": "^16.25.3",
+    "chalk": "^2.4.2",
+    "clear": "^0.1.0",
+    "clui": "^0.3.6",
+    "configstore": "^4.0.0",
+    "ejs": "^2.6.1",
+    "figlet": "^1.2.1",
+    "fs-extra": "^7.0.1",
+    "inquirer": "^6.3.1",
+    "lodash": "^4.17.11",
+    "minimist": "^1.2.0",
+    "path": "^0.12.7",
+    "simple-git": "^1.113.0",
+    "touch": "^3.1.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0"
+  }
+}
