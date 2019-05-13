@@ -1,7 +1,7 @@
 {
-  "name": "minhle generator",
+  "name": "minhle-libs",
   "version": "1.0.0",
-  "description": "MinhLe Generator",
+  "description": "Minh Le Libs",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,7 +13,7 @@
     "Vue-Starter"
   ],
   "bin": {
-    "minhle": "./index.js"
+    "minhle": "./bin/index.js"
   },
   "author": "Minh Le",
   "license": "MIT",
@@ -37,5 +37,6 @@
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0"
-  }
+  },
+  "repository": "https://github.com/libraminh/minhle-libs.git"
 }

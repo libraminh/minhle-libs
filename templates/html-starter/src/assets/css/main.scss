@@ -1,0 +1,3 @@
+<% if (includeBootstrap) { %>@import "../../../node_modules/bootstrap/scss/bootstrap.scss";<% } %>
+@import "base/vars";
+@import "layout/section-header";
