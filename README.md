@@ -1,9 +1,9 @@
 # Welcome to MinhLe Libs
 
-First, install minhle-generator using npm (we assume you have pre-installed [node.js](https://nodejs.org/en/)).
+First, install minhle-libs using npm (we assume you have pre-installed [node.js](https://nodejs.org/en/)).
 
 ```
-npm install -g minhle-generator (yarn global add minhle-generator)
+npm install -g minhle-libs (yarn global add minhle-libs)
 
 ```
 
