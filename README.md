@@ -4,7 +4,6 @@ First, install minhle-libs using npm (we assume you have pre-installed [node.js]
 
 ```
 npm install -g minhle-libs (yarn global add minhle-libs)
-
 ```
 
 Then generate your new project:
