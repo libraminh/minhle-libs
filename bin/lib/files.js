@@ -13,7 +13,7 @@ instance.createDirectoryContents = async (templatePath, newProjectPath, promptMo
   let files = dataPrompt ? promptMode.filterFiles(filesToCreate, dataPrompt) : filesToCreate
 
   files.forEach(async file => {
-    const currentFilePath = path.join(path.resolve(), 'templates', newProjectPath, file)
+    const currentFilePath = path.join(__dirname, '/../', '/../', 'templates', newProjectPath, file)
     const renderFilesPath = path.join(CURR_DIR, newProjectPath, file)
     const origFilePath = path.join(templatePath, file)
 
@@ -24,7 +24,6 @@ instance.createDirectoryContents = async (templatePath, newProjectPath, promptMo
       ejs.renderFile(currentFilePath, dataPrompt || {}, async function(err, str){
         try {
           await fs.outputFile(renderFilesPath, str)
-          console.log()
         } catch (err) {
           console.error(err)
         }
