@@ -1,14 +1,16 @@
+// Import library
 const inquirer   = require('inquirer');
 const fs = require('fs-extra')
 const path = require('path')
+
+// Set variables
 const vueQuestions = require('./questions/vue-starter') 
 const htmlQuestions = require('./questions/html-starter')
-
 const projectsURL = path.join(__dirname, '/../', '/../' , 'templates')
 const projects = fs.readdirSync(projectsURL)
 
 module.exports = {
-
+  // Prompt template choices
   askTemplates: () => {
     const questions = [
       {

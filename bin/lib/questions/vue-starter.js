@@ -1,4 +1,3 @@
-
 const questionConditional = answers => answers.templates.indexOf("vue-starter") !== -1
 
 const vueQuestions = [

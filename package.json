@@ -10,7 +10,8 @@
     "MinhLe",
     "CLI",
     "Generator",
-    "Vue-Starter"
+    "Vue-Starter",
+    "HTML-Starter"
   ],
   "bin": {
     "minhle": "./bin/index.js"

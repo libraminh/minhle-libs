@@ -20,8 +20,6 @@ instance.promptData = (answers) => {
 
 instance.filterFiles = (filesToCreate, dataConditional) => {
   return filesToCreate.filter(item => {
-    // console.log(item)
-
     if(dataConditional.includePug === false && item.includes('index.pug')) {
       return false
     } else if(dataConditional.includePug === false && item.includes('jadefiles')) {

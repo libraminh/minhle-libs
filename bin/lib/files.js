@@ -1,10 +1,13 @@
+// Import library
 const fs = require('fs-extra');
 const path = require('path');
 const ejs = require('ejs')
-const CURR_DIR = process.cwd()
 
+// Set variables
+const CURR_DIR = process.cwd()
 const instance = {}
 
+// Generate files
 instance.createDirectoryContents = async (templatePath, newProjectPath, promptMode, dataPrompt) => {
   const filesToCreate = fs.readdirSync(templatePath)
   let files = dataPrompt ? promptMode.filterFiles(filesToCreate, dataPrompt) : filesToCreate
