@@ -9,6 +9,7 @@ import pug from "gulp-pug";
 <% } %>
 import sourcemaps from "gulp-sourcemaps";
 import browserSync from "browser-sync";
+import clean from 'gulp-rimraf';
 
 browserSync.create();
 const root = "node_modules";
@@ -18,6 +19,10 @@ let build_html_destination = "dist"
 let build_assets_destination = `${build_html_destination}/assets`
 
 // Declare gulp task
+gulp.task('clean', [], function() {
+  return gulp.src(build_html_destination, { read: false }).pipe(clean());
+})
+
 gulp.task("copyHtml", function() {
   return gulp.src("src/*.html").pipe(gulp.dest(build_html_destination));
 });

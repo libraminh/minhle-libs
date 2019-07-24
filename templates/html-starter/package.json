@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "gulp serve",
-    "build": "gulp"
+    "build": "gulp clean && gulp"
   },
   "author": "Minh Le",
   "license": "ISC",
@@ -14,6 +14,7 @@
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-register": "^6.26.0",
+    "gulp-rimraf": "^0.2.2",
     <% if (includeBootstrap) { %>
     "bootstrap": "4.1.3" ,
     <% } %>

@@ -8,11 +8,12 @@ const autoprefixer = require("autoprefixer")
 const { VueLoaderPlugin } = require('vue-loader')
 const mode = process.env.NODE_ENV
 const isDevMode = process.env.NODE_ENV === 'development'
+const root_build = './build'
 
 module.exports = {
   entry: ['babel-polyfill', path.join(__dirname, 'src', 'index.js')],
   output: {
-    path: path.join(__dirname, 'build'),
+    path: path.join(__dirname, root_build),
     filename: '[name].bundle.js'
   },
   mode: mode,
@@ -40,8 +41,9 @@ module.exports = {
         use: [{
             loader: 'file-loader',
             options: {
-                name: '[name].[ext]',
-                outputPath: 'assets/fonts/'
+              name: '[name].[ext]',
+              outputPath: 'assets/fonts/', // where the fonts will go
+              publicPath: isDevMode ? 'assets/fonts' : '../fonts/' // override the default path
             }
         }]
       }
@@ -51,12 +53,13 @@ module.exports = {
     modules: [path.resolve(__dirname, 'src'), 'node_modules'],
     extensions: ['*', '.js', '.vue', '.json'],
     alias: {
-      'vue$': 'vue/dist/vue.esm.js'
+      'vue$': 'vue/dist/vue.esm.js',
+      '@': path.resolve(__dirname, 'src')
     }
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.join(__dirname, 'src', 'index.html')
+      template: path.join(__dirname, 'public', 'index.html')
     }),
     new VueLoaderPlugin(),
     <% if (includeJquery) { %>
@@ -96,12 +99,13 @@ if(isDevMode) {
     contentBase: path.join(__dirname, 'src'),
     compress: true,
     hot: true,
+    port: 3000,
     open: true
   }
   module.exports.devtool = 'source-map'
 } else {
   module.exports.plugins.push(
-    new CleanWebpackPlugin('build'),
+    new CleanWebpackPlugin(root_build),
     new MiniCssExtractPlugin({
       filename: "assets/css/style.css",
       chunkFilename: "assets/css/[name].css"
