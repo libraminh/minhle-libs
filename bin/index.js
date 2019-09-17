@@ -31,14 +31,19 @@ const run = async () => {
     const templates = answers.templates
     const templatePath = path.join(__dirname, '/../', 'templates', templates)
     const newProjectPath = templates
-    
+
     // Set chosen template
-    if(answers.templates === 'html-starter') {
-        dataPrompt = htmlPrompt.promptData(answers).dataConditional
-        promptMode = htmlPrompt
-    } else if(answers.templates === 'vue-starter') {
-        dataPrompt = vuePrompt.promptData(answers).dataConditional
-        promptMode = vuePrompt
+    switch (answers.templates) {
+        case 'html-starter':
+            dataPrompt = htmlPrompt.promptData(answers).dataConditional;
+            promptMode = htmlPrompt;
+            break;
+        case 'vue-starter':
+            dataPrompt = vuePrompt.promptData(answers).dataConditional;
+            promptMode = vuePrompt;
+            break;
+        default: 
+            break;
     }
 
     try {

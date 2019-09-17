@@ -1,4 +1,5 @@
-const questionConditional = answers => answers.templates.includes("html-starter")
+const questionConditional = answers => answers.templates.includes("html-starter");
+const includeJQueryConditional = answers => answers.templates.includes('html-starter') && answers.features.includes('includeBootstrap');
 
 const htmlQuestions = [
   {
@@ -36,7 +37,7 @@ const htmlQuestions = [
     name: "includeJQuery",
     message: "Would you like to include jQuery?",
     default: true,
-    when: answers => answers.templates.includes('html-starter') && answers.features.includes('includeBootstrap')
+    when: includeJQueryConditional
   }
 ]
 

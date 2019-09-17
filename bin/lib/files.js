@@ -21,6 +21,7 @@ instance.createDirectoryContents = async (templatePath, newProjectPath, promptMo
     const stats = fs.statSync(origFilePath);
 
     if (stats.isFile()) {
+      // render template file (ejs)
       ejs.renderFile(currentFilePath, dataPrompt || {}, async function(err, str){
         try {
           await fs.outputFile(renderFilesPath, str)
